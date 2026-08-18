@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  fmiVersion="3.0"
+  modelName="PIDController"
+  instantiationToken="1234567890"
+  description="PID controller FMU"
+  generationTool="Custom FMU Generator"
+  generationDateAndTime="2024-09-19T15:00:00Z"
+  variableNamingConvention="structured">
+
+  <CoSimulation
+    modelIdentifier="invPend_V1"
+    needsExecutionTool="false"
+    canBeInstantiatedOnlyOncePerProcess="true"
+    canGetAndSetFMUState="true"
+    canSerializeFMUState="false"
+    providesDirectionalDerivatives="false"
+    providesAdjointDerivatives="false"
+    providesPerElementDependencies="false"
+    providesEvaluateDiscreteStates="false"
+    canHandleVariableCommunicationStepSize="true"
+    maxOutputDerivativeOrder="0"
+    recommendedIntermediateInputSmoothness="0"
+    providesIntermediateUpdate="false"
+    mightReturnEarlyFromDoStep="false"
+    canReturnEarlyAfterIntermediateUpdate="false"
+    hasEventMode="false"
+  />
+
+  <UnitDefinitions>
+    <Unit name="Hz">
+      <BaseUnit s="-1"/>
+      <DisplayUnit name="kHz" factor="0.001"/>
+      <DisplayUnit name="MHz" factor="1e-06"/>
+    </Unit>
+
+    <Unit name="degree">
+      <BaseUnit rad="1" factor="0.0174532925199"/>
+    </Unit>
+
+    <Unit name="s">
+      <BaseUnit s="1"/>
+      <DisplayUnit name="us" factor="1000000."/>
+      <DisplayUnit name="ms" factor="1000."/>
+      <DisplayUnit name="min" factor="0.0166666666667"/>
+      <DisplayUnit name="h" factor="0.000277777777778"/>
+      <DisplayUnit name="hr" factor="0.000277777777778"/>
+      <DisplayUnit name="day" factor="1.15740740741e-05"/>
+      <DisplayUnit name="week" factor="1.65343915344e-06"/>
+      <DisplayUnit name="month" factor="3.80517503805e-07"/>
+      <DisplayUnit name="year" factor="3.17097919838e-08"/>
+    </Unit>
+  </UnitDefinitions>
+
+  <TypeDefinitions>
+    <EnumerationType name="solverType_SimpleEnumeration" min="1" max="2">
+      <Item name="regularSolver" value="1" description="Regular solver"/>
+      <Item name="fastSolver" value="2" description="Fast solver"/>
+    </EnumerationType>
+  </TypeDefinitions>
+
+  <DefaultExperiment startTime="0.0" stopTime="100.0" stepSize="0.01"/>
+
+  <ModelVariables>
+    <Float64
+      name="kp"
+      valueReference="0"
+      description="Proportional gain"
+      causality="parameter"
+      variability="fixed"
+      start="0.4"
+    />
+
+    <Float64
+      name="ki"
+      valueReference="1"
+      description="Integral gain"
+      causality="parameter"
+      variability="fixed"
+      start="0.3"
+    />
+
+    <Float64
+      name="kd"
+      valueReference="2"
+      description="Derivative gain"
+      causality="parameter"
+      variability="fixed"
+      start="0.8"
+    />
+
+    <Float64
+      name="dt"
+      valueReference="3"
+      description="Time step"
+      causality="parameter"
+      variability="fixed"
+      start="0.01"
+      unit="s"
+    />
+
+    <Float64
+      name="theta"
+      valueReference="4"
+      description="Pendulum angle"
+      causality="input"
+      variability="continuous"
+      start="0.0"
+      unit="degree"
+    />
+
+    <Float64
+      name="force"
+      valueReference="5"
+      description="Control force output"
+      causality="output"
+      variability="continuous"
+      min="-10"
+      max="10"
+    />
+  </ModelVariables>
+
+  <ModelStructure>
+    <Output valueReference="5"/>
+    <InitialUnknown valueReference="5"/>
+  </ModelStructure>
+
+</fmiModelDescription>

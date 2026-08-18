@@ -1,0 +1,25 @@
+Version: 1
+
+StepSize: 1000000
+StopTime: 70.0
+
+VariableMappings:
+  - VariableName: amesim_interface.force
+    TopicName: force
+
+  - VariableName: amesim_interface.angle
+    TopicName: angle
+
+  - VariableName: amesim_interface.x_current
+    TopicName: x_current
+
+  - VariableName: amesim_interface.x_desired
+    TopicName: x_desired
+
+Parameters:
+  - VariableName: run_parameters.fixedStep
+    Value: 0.001
+
+  - VariableName: run_parameters.integrationMethod
+    Value: 3
+  

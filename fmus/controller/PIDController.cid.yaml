@@ -1,0 +1,7 @@
+Version: 1
+
+Publishers:
+  - force: double
+
+Subscribers:
+  - angle: double

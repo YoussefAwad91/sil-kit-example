@@ -1,0 +1,9 @@
+Version: 1
+
+Publishers:
+  - angle: double
+  - x_current: double
+  - x_desired: double
+
+Subscribers:
+  - force: double

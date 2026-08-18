@@ -1,0 +1,21 @@
+Version: 1
+
+VariableMappings:
+  - VariableName: theta
+    TopicName: angle
+
+  - VariableName: force
+    TopicName: force
+
+Parameters:
+  - VariableName: kp
+    Value: 0.4
+
+  - VariableName: ki
+    Value: 0.3
+
+  - VariableName: kd
+    Value: 0.8
+
+  - VariableName: dt
+    Value: 0.01
