@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 989d28dd768adef702538634857942db24e1058a Ubuntu <ubuntu@ip-10-11-8-12.us-west-1.compute.internal> 1785917342 +0000	clone: from https://github.com/gabime/spdlog

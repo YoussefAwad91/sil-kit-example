@@ -1,0 +1,61 @@
+// SPDX-FileCopyrightText: 2022 Vector Informatik GmbH
+//
+// SPDX-License-Identifier: MIT
+
+#pragma once
+
+
+#include <memory>
+#include <string>
+
+#include "services/logging/ILoggerInternal.hpp"
+
+#include "dashboard/service/ISilKitToOatppMapper.hpp"
+#include "dashboard/client/IDashboardSystemServiceClient.hpp"
+#include "dashboard/client/DashboardSystemApiClient.hpp"
+#include "dashboard/client/DashboardRetryPolicy.hpp"
+#include "dashboard/IRestClient.hpp"
+#include "dashboard/DashboardBulkUpdate.hpp"
+#include "services/metrics/MetricsDatatypes.hpp"
+
+namespace SilKit {
+namespace Dashboard {
+
+// Utility to initialize the Oatpp library separately, e.g. in test cases
+struct LibraryInitializer
+{
+    LibraryInitializer();
+    ~LibraryInitializer();
+};
+
+class DashboardRestClient : public VSilKit::IRestClient
+{
+public:
+    DashboardRestClient(Services::Logging::ILoggerInternal* logger, const std::string& dashboardServerUri);
+    ~DashboardRestClient() override;
+
+public: // For testing
+    DashboardRestClient(std::shared_ptr<LibraryInitializer> libraryInit, Services::Logging::ILoggerInternal* logger,
+                        std::shared_ptr<IDashboardSystemServiceClient> serviceClient,
+                        std::shared_ptr<ISilKitToOatppMapper> mapper);
+
+public: // IRestClient
+    bool IsBulkUpdateSupported() override;
+    uint64_t OnSimulationStart(const std::string& connectUri, uint64_t time) override;
+
+    void OnBulkUpdate(uint64_t simulationId, const DashboardBulkUpdate& bulkUpdate) override;
+
+    void OnMetricsUpdate(uint64_t simulationId, const std::string& origin,
+                         const VSilKit::MetricsUpdate& metricsUpdate) override;
+
+private: //member
+    std::shared_ptr<LibraryInitializer> _libraryInit;
+    Services::Logging::ILoggerInternal* _logger;
+    std::shared_ptr<SilKit::Dashboard::DashboardRetryPolicy> _retryPolicy;
+    std::shared_ptr<ISilKitToOatppMapper> _silKitToOatppMapper;
+    std::shared_ptr<DashboardSystemApiClient> _apiClient;
+    std::shared_ptr<IDashboardSystemServiceClient> _serviceClient;
+};
+
+} // namespace Dashboard
+} // namespace SilKit

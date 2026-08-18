@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/vectorgrp/sil-kit.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[submodule "ThirdParty/asio"]
+	active = true
+	url = https://github.com/chriskohlhoff/asio.git
+[submodule "ThirdParty/fmt"]
+	active = true
+	url = https://github.com/fmtlib/fmt
+[submodule "ThirdParty/googletest"]
+	active = true
+	url = https://github.com/google/googletest
+[submodule "ThirdParty/oatpp"]
+	active = true
+	url = https://github.com/oatpp/oatpp.git
+[submodule "spdlog"]
+	active = true
+	url = https://github.com/gabime/spdlog

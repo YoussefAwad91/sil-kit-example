@@ -1,0 +1,30 @@
+# pack-refs with: peeled fully-peeled sorted 
+6dd493ca5fd81c161ecc6fb38d106a6b1b61fa9a refs/remotes/origin/#642_candidate
+0fb100f0b8f45c2a780162998d73d32a0faf32b0 refs/remotes/origin/ReplacingFastQueueInAsyncProcessor
+92b2a0debff0b5c0cfdf2731078425400cead294 refs/remotes/origin/async_keep_vars
+4cd37af26ffa55231f11649106a1bb33a3244cd1 refs/remotes/origin/better_http_pipelining
+2c6f64f7506bd6c5bfb4b1f0cdacad8c1f7466fc refs/remotes/origin/endpoint_400
+96909cca7722041afe68549dd5391104c505302e refs/remotes/origin/future-draft
+f83d648fd82dc222ef88aabbafb68efbd7d7bf50 refs/remotes/origin/master
+edbe80cbc37180e19b902e86831fea08fc880ee4 refs/remotes/origin/multi_origin_cors
+54625683b6b573631a457b3c4d95ee0e9b416ed6 refs/remotes/origin/v1.4.0
+2b26954c2d048f67ebcfd002aa43aa9f5a675d88 refs/tags/0.19.1
+5a1f3d6f2ce146008515e20454d44dbb56d23cba refs/tags/0.19.1-2
+d48a65f59b230723e0a96b1456ac791ed274d025 refs/tags/0.19.10
+857315c01e9318c7e72665ed222565d583f32a98 refs/tags/0.19.11
+afbafe447ff447db5ab227022eb4a568da97d16b refs/tags/0.19.12
+d353593adf93dbfa82243ef985315b330743ddf7 refs/tags/0.19.4
+55e73cb699a4f08c9ed1dc65673a3828e23fe63c refs/tags/0.19.6
+4e06bb6e2353cae1ee3d8df20bf9d116518b0f62 refs/tags/0.19.7
+5b4b313a0bc57e48abfd9c85d7d7c42a1bbdef70 refs/tags/0.19.8
+7cf4d9e7698cd5353c9f1cd71d56af97eb05e1cd refs/tags/0.19.9
+aff983eb9f18c94749e737156c4467abda642450 refs/tags/1.0.0
+4427123bb3608a78806ebce654cfe74605a389bf refs/tags/1.1.0
+8f1c11ae534e1f03646de8efcc9b2505fb1881cc refs/tags/1.2.0
+9899786b235b2d987c8b131cdb01909727b98d4f refs/tags/1.2.5
+349d96114ae03ae6fd44dd2a398e5cdd9529fb48 refs/tags/1.3.0
+17ef2a7f6c8a932498799b2a5ae5aab2869975c7 refs/tags/1.3.0-latest
+c566a97f4b20ae02c9c667a131e1726ad2a6b040 refs/tags/1.3.1
+^17ef2a7f6c8a932498799b2a5ae5aab2869975c7
+49e63fbf15637ef9d2dba9452a141e0ce31a4ead refs/tags/v0.18.12-alpha
+1ab3543bd1e62c90c0f2b99af5f45939eedefa55 refs/tags/v0.18.9-alpha

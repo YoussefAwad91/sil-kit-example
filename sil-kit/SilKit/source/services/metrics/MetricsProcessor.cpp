@@ -1,0 +1,87 @@
+// SPDX-FileCopyrightText: 2024 Vector Informatik GmbH
+//
+// SPDX-License-Identifier: MIT
+
+#include "services/metrics/MetricsProcessor.hpp"
+
+#include "core/internal/IParticipantInternal.hpp"
+#include "services/logging/LoggerMessage.hpp"
+
+using SilKit::Services::Logging::Level;
+using SilKit::Services::Logging::Topic;
+using SilKit::Services::Logging::LoggerMessage;
+
+namespace VSilKit {
+
+MetricsProcessor::MetricsProcessor(std::string participantName)
+    : _participantName{std::move(participantName)}
+{
+}
+
+void MetricsProcessor::SetLogger(SilKit::Services::Logging::ILoggerInternal& logger)
+{
+    _logger = &logger;
+}
+
+void MetricsProcessor::SetSinks(std::vector<std::unique_ptr<IMetricsSink>> sinks)
+{
+    std::lock_guard<decltype(_mutex)> lock{_mutex};
+
+    if (_sinksSetUp)
+    {
+        _logger->MakeMessage(Level::Error, TopicOf(*this))
+            .SetMessage("Refusing to setup metrics sinks again")
+            .Dispatch();
+        return;
+    }
+
+    _sinks = std::move(sinks);
+
+    for (const auto& sink : _sinks)
+    {
+        for (const auto& [origin, update] : _updateCache)
+        {
+            sink->Process(origin, update);
+        }
+    }
+
+    _updateCache.clear();
+
+    _sinksSetUp = true;
+}
+
+void MetricsProcessor::Process(const std::string& origin, const VSilKit::MetricsUpdate& metricsUpdate)
+{
+    if (!_sinksSetUp)
+    {
+        std::lock_guard<decltype(_mutex)> lock{_mutex};
+
+        if (!_sinksSetUp)
+        {
+            auto& cache = _updateCache[origin].metrics;
+            const auto& metrics = metricsUpdate.metrics;
+
+            cache.insert(cache.end(), metrics.begin(), metrics.end());
+
+            return;
+        }
+    }
+
+    for (const auto& sink : _sinks)
+    {
+        sink->Process(origin, metricsUpdate);
+    }
+}
+
+void MetricsProcessor::OnMetricsUpdate(const std::string& /*simulationName*/, const std::string& participantName,
+                                       const MetricsUpdate& metricsUpdate)
+{
+    if (participantName == _participantName)
+    {
+        return; // ignore metrics received from ourself (avoids infinite loops)
+    }
+
+    Process(participantName, metricsUpdate);
+}
+
+} // namespace VSilKit

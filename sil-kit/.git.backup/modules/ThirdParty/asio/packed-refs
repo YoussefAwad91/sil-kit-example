@@ -1,0 +1,154 @@
+# pack-refs with: peeled fully-peeled sorted 
+93548c8bab3dfa5217a5f0bdea1401395d7d27b1 refs/remotes/origin/any-completion-handler
+89b321dd4d892e4ad9c9e8b9321da7941bd8427a refs/remotes/origin/apple-network-framework
+0e15cfd4557e93f50c42ae2d55947cdc0f3faca6 refs/remotes/origin/as_single-token
+e271963a10f95ab7ade90ee1b8374f4862f20d8b refs/remotes/origin/asio-1-10-branch
+8d6df7b8a4ff5dcb1d5c696f508fafd0444dede1 refs/remotes/origin/asio-1-12-branch
+b595bfca13720a931f91e2a5a09dbf0dd11092e7 refs/remotes/origin/asio-1-4-branch
+01ceb148ef1bef0907e3dda58d3d332b45dcbf15 refs/remotes/origin/async_initiate-v2
+f2bddd4a6571ff001d131698f00cc91099c199cc refs/remotes/origin/cancellation
+91795e70ff1888116b2f24ae6033a3435dab51ce refs/remotes/origin/channels
+1b09bb87aca2af99ba40b7f98a846d83a56b5172 refs/remotes/origin/cidr
+af86fd65c4927afd7fff4be8a2619700c8e3144b refs/remotes/origin/co_await
+4b45413af0cc59314242382a9d85424910823eef refs/remotes/origin/co_composed
+ebb820a469960a9dceae1932d25c9fac6457fbf2 refs/remotes/origin/compile-time-improvements
+afb971ba8e691e977ba7c8fe292c50dc5169cde9 refs/remotes/origin/coro-co_spawn-fix
+f8f3733510db2e383b1421e74794a766931aced2 refs/remotes/origin/coro_improve
+f1cbf4f4119a04e85efb11f3ca8ed6db29b5cb70 refs/remotes/origin/cpp11-only
+9d27655254bd1f62b47c1c8ad641bfbf4652f129 refs/remotes/origin/disposition
+91496613ac69f245166d3dce91f3fbf9722177ce refs/remotes/origin/execution-compile-time-improvements
+9f0d75d3971edb15c43d24eff0d03c9e38f2d9aa refs/remotes/origin/executor-cpo-compile-time
+bba8bb46ca522ce23b8aacdb5d9881a7518bd260 refs/remotes/origin/executors
+7964d6779917c51ffc52a2196fe5cac0bb319e63 refs/remotes/origin/futures
+601db6d91aef594c95d0f2e7d069b0f533f8271e refs/remotes/origin/go
+c077cc87ef7a93a9a5d6e1c65a11fd023fdc94cd refs/remotes/origin/handler_traits
+5eb54141e4418e9f258a74f8ffccbef6b1b1a705 refs/remotes/origin/io-object-executors
+3cd94c43c0e73885e35bf9f51eb1eecfc460d9d1 refs/remotes/origin/io-uring-1
+39d2e4bfb36f99ea2005f124d0b0c5a71eb9cf20 refs/remotes/origin/issue10
+8806a6803cde7054c3049d3666d3ec36786568c5 refs/remotes/origin/master
+f756e2501694d882cb0c38b3b5e82f6be8adea33 refs/remotes/origin/multisig
+5b2720d9b52153e342a3eaa5c8723b0eec293903 refs/remotes/origin/no-default-candidate-executor
+95dea1ef19f9513c80d7eabe168a67df623d6928 refs/remotes/origin/no-default-candidate-executor-unary-functions-get-executor
+4dcaa873e73b39cf1704a8642a39bb08d96bf70a refs/remotes/origin/no-default-candidate-executor-unary-functions-io-object
+c586e957f164850ab0f6caa3ec0ce52ca035791d refs/remotes/origin/non-blocking-mode-changes
+6ff193bc870404e8bb2ce9ad2414be3803229845 refs/remotes/origin/nvcc-support
+94e1a326fcecb6e3cff2031a2740952561be3847 refs/remotes/origin/rvalue-handler-invocation
+8406f4fe64913debd8e8d52aab9344efef03b49c refs/remotes/origin/spawn-exceptions-fix
+c5e9c8c846882259388ee2318df0b325f13304c7 refs/remotes/origin/standard-executors
+a44e796d2a049fdce1cee62aa5f4add0d7b2ace7 refs/remotes/origin/unified-executors
+906f4f968b14b1d2164591e86d3d00e8972f5b86 refs/tags/asio-1-10-0
+e80030ffa178dbcca11d84ab607a87495a711a17 refs/tags/asio-1-10-1
+79c7f395cfe4e05bb6391ffa9687ccb58f4c9600 refs/tags/asio-1-10-2
+^8482b59726310bc6b11cfc763b398b20bc8d25de
+00cdf672654fda984b0c57218eaf77845ad4167a refs/tags/asio-1-10-3
+581fe686293be42260800c54cf2ac33576f35497 refs/tags/asio-1-10-4
+42cf0dfbc7201b9cc4307dc27f0b05b391f1e1d3 refs/tags/asio-1-10-5
+c466dc46d55755d38ee1831e95207d6b329c4976 refs/tags/asio-1-10-6
+6c4268544ded99344206147a17c5fa87ed91e832 refs/tags/asio-1-10-7
+28d9b8d6df708024af5227c551673fdb2519f5bf refs/tags/asio-1-10-8
+66e76b9e4252ff4681227d0d8e34374ec1fa20e5 refs/tags/asio-1-11-0
+82be891ba69c65be4c684d709d78a225da69c3c5 refs/tags/asio-1-12-0
+^b3d2ab7255fabe46a49b24a584c9fd797c8248e5
+b73dc1d2c0ecb9452a87c26544d7f71e24342df6 refs/tags/asio-1-12-1
+22afb86087a77037cd296d27134756c9b0d2cb75 refs/tags/asio-1-12-2
+90f32660cd503494b3707840cfbd5434d8e9dabe refs/tags/asio-1-13-0
+8d4c8c3ce43c866f609d2eda9a43fe5b334620be refs/tags/asio-1-14-0
+62aea6b2073a104dbaaec80be7c04f4770acb615 refs/tags/asio-1-14-1
+a304654bc68a15df0bca038114a4ace020a39aed refs/tags/asio-1-16-0
+a5c5077e44c451ddc8a50c3717e66dcccc92b074 refs/tags/asio-1-16-1
+efff0de89920eb66afead00dfd8bb8cf588ccee4 refs/tags/asio-1-17-0
+be7badc31abcc395cf868de6a1e240c2350bdbf2 refs/tags/asio-1-18-0
+b84e6c16b2ea907dbad94206b7510d85aafc0b42 refs/tags/asio-1-18-1
+a4d820dd69b37fb8daee275d20eb162054453414 refs/tags/asio-1-18-2
+607fd5d004859e31165d4d0badd9103821b01de4 refs/tags/asio-1-19-0
+4c5a7cca62cb4354de08298e868bea54bfd6692b refs/tags/asio-1-19-1
+dc67374fce1051b57ade8838c9aac6642e9bbf86 refs/tags/asio-1-19-2
+185c7dd2e7b333b9cba72ce97c33f8c80a2336d0 refs/tags/asio-1-20-0
+^6c054e98f3f53352d12b6cd46d63b6d404cc044b
+4a6018f567b5df9dcdf592dae96409d500ce7535 refs/tags/asio-1-21-0
+^08a7029cb10c911b6fb66fb015217a431206e52c
+cbeac7ef04f98fa2bb2250b72492f9396f54e963 refs/tags/asio-1-22-0
+^0d4e89a14b7c371eb5b43e214f13d74771a55e8d
+448bf3ea0050175e6f9be6cfd7240ccc93f25fcc refs/tags/asio-1-22-1
+^bba12d10501418fd3789ce01c9f86a77d37df7ed
+5070f24914c5836663ce35883f145ef469a41ffe refs/tags/asio-1-22-2
+^93e3c81d5cca59c17c27b3516e1fa00eab1e9a99
+2b475113d49be7bb65e2540e8dd6e694ab455c07 refs/tags/asio-1-23-0
+^4915cfd8a1653c157a1480162ae5601318553eb8
+01beb476d90ea974bd04bc589dec1f8b52584e65 refs/tags/asio-1-24-0
+^147f7225a96d45a2807a64e443177f621844e51c
+6f20d2429cb659325dc7d2da321567797ce0c019 refs/tags/asio-1-26-0
+^bcbbb9d292fd7aa1fec44434500233a7b33524af
+985d5b963d98ae0d50dd12a01a4b12ed9e0626b6 refs/tags/asio-1-27-0
+^f693a3eb7fe72a5f19b975289afc4f437d373d9c
+d079d99d8ad6bce035c4f332e1fcb900b3ab9a51 refs/tags/asio-1-28-0
+^c465349fa5cd91a64bb369f5131ceacab2c0c1c3
+e4bb986517cb192fd100e2128098eb4377068997 refs/tags/asio-1-28-1
+^1f8d154829b902dbc45a651587c6c6df948358e8
+772f5754991363fcaa23d4d7849ba207fb077465 refs/tags/asio-1-28-2
+^7609450f71434bdc9fbd9491a9505b423c2a8496
+bc2680d9248e66d6a3ca4e9879645875d5ca6bc8 refs/tags/asio-1-29-0
+^814f67e730e154547aea3f4d99f709cbdf1ea4a0
+229d3b5d30f5d1bcbd2b72d5e20835ffa2c304db refs/tags/asio-1-30-0
+^22ccfc94fc77356f7820601f9f33b9129a337d2d
+833a102a6c181caaab89c36ba101726f2e675fde refs/tags/asio-1-30-1
+^30a170c0e84a798a1752652439bd93f900062eda
+42a93679dc4c8c5caf3d3082542f1bfa2438271d refs/tags/asio-1-30-2
+^12e0ce9e0500bf0f247dbd1ae894272656456079
+5859ad48f928d759affab1775db634ba3f1d1071 refs/tags/asio-1-31-0
+^1f534288b4be0be2dd664aab43882a0aa3106a1d
+3c8e88938d7b41fb5185bd0367b544b51a36ae94 refs/tags/asio-1-32-0
+^03ae834edbace31a96157b89bf50e5ee464e5ef9
+1b425a8d4a46cfa3fbd674fe29b90ae971df0885 refs/tags/asio-1-33-0
+^49081680eca0e78d47a25cb024a990e1edf3107b
+771d8cbf7d2a6870de8f4bc61af4d2ce5fd1ee14 refs/tags/asio-1-34-0
+^a892f73dc96bfaf92db98a3fe219f920fad007ea
+e396e4db8df9f86644dbe3f4581284c8b063d773 refs/tags/asio-1-34-1
+^ab11be11d5e3a524eb759719483fd1f68deec92e
+8f9108c84e324fbce155befb2820e3f9676ca62b refs/tags/asio-1-34-2
+^ed6aa8a13d51dfc6c00ae453fc9fb7df5d6ea963
+2174ba43fe97e12a8088071c519540c5e228a7fd refs/tags/asio-1-35-0
+^d971c9a74d74efcfdb4281188d3472b3593669ec
+366dfc44640182cb21c1ebf7efb658a6bec13f5a refs/tags/asio-1-36-0
+^231cb29bab30f82712fcd54faaea42424cc6e710
+8dd2a42164b105bbce8793a0a979918c29f027a2 refs/tags/asio-1-38-0
+^03cf5f86a780dd102f1cdd3a59d1244d12143e46
+dfd7b3e3145bac5d0e91a99fde69c6ae1442f971 refs/tags/asio-1-38-1
+^bbecff21a23b97c34641f0f1f08b28c91b9c77cf
+12b52a54a25d1861b037bc5d9810f92a7151d920 refs/tags/asio-1-38-2
+^8806a6803cde7054c3049d3666d3ec36786568c5
+9f24f5420c90a7e981d8023693434717c2e1062d refs/tags/asio-1-4-0
+^f390f8143ecc3c00f5c88c4062fbc962e910fd1e
+d5130230028b34017aa88cd386ba104d2053c7ed refs/tags/asio-1-4-1
+^95efc0e9850b29acdcd77d61079cfe35bcff15d2
+2304bfd46d1758b7dfd4dd47bb3a86ad756cc0e8 refs/tags/asio-1-4-2
+^75d26c21b6b62c937d532a699dc1ec7d3b083541
+0b5cc54c0a1c481cb503a8e27fa0b41cdb0523e3 refs/tags/asio-1-4-3
+^e86efe309fabefd0b7fae3a9abe3c812057fdd90
+d937095b5864c7bc1fe368e49861e4a383877e67 refs/tags/asio-1-4-4
+^72fed035cabbfd0dd5f27043fff07ee67a7cd670
+aaa66f161c50315e6a56d5bae859146dc21b3478 refs/tags/asio-1-4-5
+^857444ff5118a9b766f4fc3ecfc0bf56721d8827
+9cc3fb7ba80fe97f3ed71977eb22df2d867fe75c refs/tags/asio-1-4-6
+^7c5d7469b36f0b09e2960c5958a97ba903b963bd
+d3a2bc3d577503342025a2e58b0da0ce4f0e7f17 refs/tags/asio-1-4-7
+^177f7711591f96ebe349c979aff2212c024835d2
+e1108dcbe890df1fd60c489510b16d36936bdb33 refs/tags/asio-1-4-8
+^6d4226088274f9dd112d96062a7937245cc0a7f9
+8dded5d3a03c255048c1bef2287d325cc6b9e6b3 refs/tags/asio-1-5-0
+^ff90fcadd27d0814768b8900253c378c5e13ba70
+e33b285c2fb4b417d87a732964f9ec48543dd09a refs/tags/asio-1-5-1
+^edf3b5981154fae5acfa4af87fc69eca2652b2bc
+41ff661df36e6e0ccfa5d9b35f8cdf2885bce17f refs/tags/asio-1-5-2
+^4f1b803068aac9a2248c5118add7c4055089b4a3
+2c48a13bb5331b041ea970ee731e26008313cc08 refs/tags/asio-1-5-3
+^ca459c4aae67979bb7cd6408b522cc340a22e270
+ea497ead03df2517fbc2956f14ad2e4cea801cd1 refs/tags/asio-1-6-0
+^0b95b0b39041fea8b2445dac68677d8c96ed9a96
+a8dff333a915e4a39a0d995f2e46d668b14b344b refs/tags/asio-1-6-1
+b49202062ec18d5db1a601e730cbb3bac9e282bb refs/tags/asio-1-8-0
+e28ab4e183cddf9dc4908ffb51fb14042b76a830 refs/tags/asio-1-8-1
+^1d1e3365bc9d7535cd71d75ea1891b54a6db46e2
+87636b083739d1ccedd9705b3a370ebdc88665c7 refs/tags/asio-1-8-2
+6dd1522a7f13e98b9030aad9881d9d4b24ffeb09 refs/tags/asio-1-8-3
+^bdd9f56425deab4547ef2d67c2cb1d3b06920e9f

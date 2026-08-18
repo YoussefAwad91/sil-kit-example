@@ -1,0 +1,42 @@
+// SPDX-FileCopyrightText: 2023 Vector Informatik GmbH
+//
+// SPDX-License-Identifier: MIT
+
+#include "services/metrics/MetricsSender.hpp"
+
+#include "services/logging/LoggerMessage.hpp"
+
+
+namespace VSilKit {
+
+
+MetricsSender::MetricsSender(SilKit::Core::IParticipantInternal* participant)
+    : _participant{participant}
+    , _logger{participant->GetLoggerInternal()}
+{
+    _serviceDescriptor.SetNetworkName("default");
+}
+
+
+// IMetricsSender
+
+void MetricsSender::Send(const VSilKit::MetricsUpdate& msg)
+{
+    _participant->SendMsg(this, msg);
+}
+
+
+// IServiceEndpoint
+
+void MetricsSender::SetServiceDescriptor(const SilKit::Core::ServiceDescriptor& serviceDescriptor)
+{
+    _serviceDescriptor = serviceDescriptor;
+}
+
+auto MetricsSender::GetServiceDescriptor() const -> const SilKit::Core::ServiceDescriptor&
+{
+    return _serviceDescriptor;
+}
+
+
+} // namespace VSilKit

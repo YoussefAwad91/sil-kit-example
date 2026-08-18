@@ -1,0 +1,37 @@
+---
+Description: Example include configuration for CAN Controllers
+Logging:
+  Sinks:
+    - Type: Stdout
+      Level: Info
+      Experimental:
+        DisabledTopics: [MessageTracing, Flexray]
+        EnabledTopics: [Can]
+
+CanControllers:
+- Name: CAN1
+  Replay:
+    UseTraceSource: Source1
+    Direction: Both
+    MdfChannel:
+      ChannelName: MyTestChannel1
+      ChannelPath: path/to/myTestChannel1
+      ChannelSource: MyTestChannel
+      GroupName: MyTestGroup
+      GroupPath: path/to/myTestGroup1
+      GroupSource: MyTestGroup
+  UseTraceSinks:
+  - Sink1
+- Name: MyCAN2
+  Network: CAN2
+HealthCheck:
+  SoftResponseTimeout: 1234
+  HardResponseTimeout: 4567
+Extensions:
+  SearchPathHints:
+  - Foobar
+Tracing:
+  TraceSinks:
+  - Name: sink1
+    Type: Mdf4File
+    OutputPath: someFile.mf4

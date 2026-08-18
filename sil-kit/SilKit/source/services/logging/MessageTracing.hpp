@@ -1,0 +1,89 @@
+// SPDX-FileCopyrightText: 2022 Vector Informatik GmbH
+//
+// SPDX-License-Identifier: MIT
+
+#pragma once
+
+#include "services/logging/LoggerMessage.hpp"
+#include "core/internal/IServiceEndpoint.hpp"
+#include "core/internal/ServiceDescriptor.hpp"
+#include "core/internal/traits/SilKitMsgTraits.hpp"
+#include "core/internal/traits/SilKitLoggingTraits.hpp"
+
+#include "config/YamlParser.hpp"
+
+
+namespace SilKit {
+namespace Services {
+
+namespace Detail {
+template <class SilKitMessageT>
+void TraceMessageCommon(Logging::ILoggerInternal* logger, const char* messageString, const Core::IServiceEndpoint* addr,
+                        const SilKitMessageT& msg, std::string_view keyString = {}, std::string_view valueString = {})
+{
+    if constexpr (std::is_same_v<SilKitMessageT, SilKit::Services::Logging::LogMsg>)
+    {
+        // Don't trace LogMessages - this could cause cycles!
+        SILKIT_UNUSED_ARG(logger);
+        SILKIT_UNUSED_ARG(messageString);
+        SILKIT_UNUSED_ARG(addr);
+        SILKIT_UNUSED_ARG(msg);
+        SILKIT_UNUSED_ARG(keyString);
+        SILKIT_UNUSED_ARG(valueString);
+        return;
+    }
+    else
+    {
+        if (logger->GetLogLevel() == Logging::Level::Trace)
+        {
+            constexpr auto msgTopic = Core::SilKitTopicTrait<SilKitMessageT>::Topic();
+            auto lm = logger->MakeMessage(Logging::Level::Trace,
+                                          msgTopic != Logging::Topic::None ? msgTopic : Logging::Topic::MessageTracing)
+                          .SetMessage(messageString)
+                          .AddKeyValue(addr->GetServiceDescriptor())
+                          .AddKeyValue(Logging::Keys::msg, msg);
+             
+            if (!keyString.empty() && !valueString.empty())
+            {
+                lm.SetKeyValue(keyString, valueString);
+            }
+
+            if constexpr (Core::HasTimestamp<SilKitMessageT>::value)
+            {
+                lm.AddKeyValue(Logging::Keys::virtualTimeNS, "{}", msg.timestamp.count());
+            }
+
+            // Turn the Raw-logging into a trait when we have enough types that implement it
+            if constexpr (std::is_same_v<SilKitMessageT, SilKit::Services::Flexray::FlexrayControllerConfig>)
+            {
+                lm.SetKeyValue(Logging::Keys::raw, SilKit::Config::SerializeAsJson(msg));
+            }
+            lm.Dispatch();
+        }
+    }
+}
+
+} // namespace Detail
+
+template <class SilKitMessageT>
+void TraceRx(Logging::ILoggerInternal* logger, const Core::IServiceEndpoint* addr, const SilKitMessageT& msg,
+             const Core::ServiceDescriptor& from)
+{
+    Detail::TraceMessageCommon(logger, "Recv message", addr, msg, Logging::Keys::from, from.GetParticipantName());
+}
+
+template <class SilKitMessageT>
+void TraceTx(Logging::ILoggerInternal* logger, const Core::IServiceEndpoint* addr, const SilKitMessageT& msg)
+{
+    Detail::TraceMessageCommon(logger, "Send message", addr, msg);
+}
+
+template <class SilKitMessageT>
+void TraceTx(Logging::ILoggerInternal* logger, const Core::IServiceEndpoint* addr, const std::string_view target,
+             const SilKitMessageT& msg)
+{
+    Detail::TraceMessageCommon(logger, "Send targetted message", addr, msg, Logging::Keys::to, target);
+}
+
+} // namespace Services
+} // namespace SilKit
